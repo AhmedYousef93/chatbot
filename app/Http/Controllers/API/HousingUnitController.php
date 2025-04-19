@@ -10,7 +10,6 @@ class HousingUnitController extends Controller
 {
     public function index(Request $request)
     {
-        // بحث ذكي لو فيه keyword
         $query = HousingUnit::query();
 
         if ($request->has('search')) {
