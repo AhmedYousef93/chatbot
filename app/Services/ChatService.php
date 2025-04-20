@@ -110,7 +110,7 @@ EOD
 
         $aiMessages = array_merge($aiMessages, $previousMessages);
 
-        $response = Http::withToken('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')->post('https://openrouter.ai/api/v1/chat/completions', [
+        $response = Http::withToken(config('openrouter.api_key'))->post(config('openrouter.base_url'), [
             'model'    => 'mistralai/mistral-7b-instruct',
             'messages' => $aiMessages,
         ]);
